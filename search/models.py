@@ -1,6 +1,7 @@
-# # -*- coding: utf-8 -*-
+# # -*- coding: UTF-8 -*-
 from django.db import models
 from DjangoUeditor.models import UEditorField
+
 # Create your models here.
 
 '''
@@ -22,6 +23,7 @@ unique：True表示唯一
 【EmailField】
 '''
 
+
 class Goods(models.Model):
     # 产品id
     id = models.AutoField(primary_key=True, max_length=20, verbose_name="产品id")
@@ -35,25 +37,25 @@ class Goods(models.Model):
     classify = models.CharField(max_length=50, default="", verbose_name="产品分类")
     # 产品属性
     attribute = models.CharField(max_length=50, default="", verbose_name="产品属性")
-    #基本单位
+    # 基本单位
     baiscUnit = models.CharField(max_length=20, blank=True, verbose_name="基本单位")
-    #可开具发票类型
+    # 可开具发票类型
     invoiceType = models.CharField(max_length=20, default="其他", verbose_name="可开具发票类型")
-    #是否含税
+    # 是否含税
     tax = models.BooleanField(default=True, verbose_name="是否含税")
-    #库存
+    # 库存
     inventoryCeiling = models.IntegerField(default=0, verbose_name="库存")
-    #供应商
+    # 供应商
     mainSupplier = models.CharField(max_length=100, blank=True, verbose_name="供应商")
-    #产品说明
+    # 产品说明
     explain = models.TextField(blank=True, verbose_name="产品说明")
-    #产品参数
+    # 产品参数
     parameter = models.TextField(blank=True, verbose_name="产品参数")
-    #图片
+    # 图片
     img = models.FileField(upload_to='./upload/goods', null=True, blank=True, verbose_name="图片")
-    #品牌
+    # 品牌
     brand = models.CharField(max_length=50, verbose_name="品牌")
-    #规格
+    # 规格
     standard = models.TextField(blank=True, verbose_name="规格")
 
     index = models.IntegerField(default=0, verbose_name='搜索查看数')
@@ -69,27 +71,27 @@ class Goods(models.Model):
     def __str__(self):
         return self.name
 
-class EnquiryInfo(models.Model):
 
+class EnquiryInfo(models.Model):
     id = models.AutoField(primary_key=True, max_length=20, verbose_name="id")
 
-    name = models.CharField(max_length=20,  verbose_name="客户姓名")
+    name = models.CharField(max_length=20, verbose_name="客户姓名")
 
-    phone = models.CharField(max_length=20,  verbose_name="客户电话")
+    phone = models.CharField(max_length=20, verbose_name="客户电话")
 
-    email = models.CharField(max_length=20,  verbose_name="客户邮箱")
+    email = models.CharField(max_length=20, verbose_name="客户邮箱")
 
     companyName = models.CharField(max_length=20, blank=True, verbose_name="公司名称")
 
-    position = models.CharField(max_length=20, blank=True,  verbose_name="职位")
+    position = models.CharField(max_length=20, blank=True, verbose_name="职位")
 
-    brand = models.CharField(max_length=20, blank=True,  verbose_name="品牌")
+    brand = models.CharField(max_length=20, blank=True, verbose_name="品牌")
 
-    number = models.CharField(max_length=50,  verbose_name="产品型号")
+    number = models.CharField(max_length=50, verbose_name="产品型号")
 
-    apply = models.CharField(max_length=100, blank=True,  verbose_name="应用")
+    apply = models.CharField(max_length=100, blank=True, verbose_name="应用")
 
-    describe = models.CharField(max_length=200, blank=True,  verbose_name="项目描述")
+    describe = models.CharField(max_length=200, blank=True, verbose_name="项目描述")
 
     remark = models.CharField(max_length=200, blank=True, verbose_name="备注")
 
@@ -110,22 +112,24 @@ class EnquiryInfo(models.Model):
 
 
 class CompanyInfo(models.Model):
-
     id = models.AutoField(primary_key=True, max_length=5, verbose_name="id")
 
-    name = models.CharField(max_length=50,  verbose_name="公司名字")
+    name = models.CharField(max_length=50, verbose_name="公司名字")
 
-    synopsis = UEditorField(u'公司简介',width=900, height=300, toolbars="full", imagePath="images/%(basename)s_%(datetime)s.%(extname)s", filePath="file/%(basename)s_%(datetime)s.%(extname)s", upload_settings={"imageMaxSize":1204000})
+    synopsis = UEditorField(u'公司简介', width=900, height=300, toolbars="full",
+                            imagePath="images/%(basename)s_%(datetime)s.%(extname)s",
+                            filePath="file/%(basename)s_%(datetime)s.%(extname)s",
+                            upload_settings={"imageMaxSize": 1204000})
 
     target = models.TextField(verbose_name="公司目标")
 
-    qq = models.CharField(max_length=20, default="0",  verbose_name="QQ")
+    qq = models.CharField(max_length=20, default="0", verbose_name="QQ")
 
-    phone = models.CharField(max_length=20,  verbose_name="公司电话")
+    phone = models.CharField(max_length=20, verbose_name="公司电话")
 
-    email = models.CharField(max_length=50,  verbose_name="公司邮箱")
+    email = models.CharField(max_length=50, verbose_name="公司邮箱")
 
-    postcode = models.CharField(max_length=10,  verbose_name="邮编")
+    postcode = models.CharField(max_length=10, verbose_name="邮编")
 
     emailLink = models.CharField(max_length=100, verbose_name="邮箱系统")
 
@@ -135,15 +139,15 @@ class CompanyInfo(models.Model):
 
     longitudeLatitude = models.CharField(max_length=40, verbose_name="公司经纬度")
 
-    transit = models.CharField(max_length=50,  verbose_name="公交站")
+    transit = models.CharField(max_length=50, verbose_name="公交站")
 
     transitInfo = models.CharField(max_length=200, verbose_name="公交站描述")
 
-    navigation = models.CharField(max_length=50,  verbose_name="导航")
+    navigation = models.CharField(max_length=50, verbose_name="导航")
 
     navigationInfo = models.CharField(max_length=200, verbose_name="导航描述")
 
-    subway = models.CharField(max_length=50,  verbose_name="地铁站")
+    subway = models.CharField(max_length=50, verbose_name="地铁站")
 
     subwayInfo = models.CharField(max_length=200, verbose_name="地铁站描述")
 
@@ -157,8 +161,8 @@ class CompanyInfo(models.Model):
     def __str__(self):
         return self.name
 
-class CompanyCourse(models.Model):
 
+class CompanyCourse(models.Model):
     id = models.AutoField(primary_key=True, max_length=2, verbose_name="id")
 
     year = models.IntegerField(verbose_name="年份")
@@ -175,9 +179,9 @@ class CompanyCourse(models.Model):
     def __str__(self):
         return self.course
 
-class BrandList(models.Model):
 
-    id = models.AutoField(primary_key=True,  verbose_name="id")
+class BrandList(models.Model):
+    id = models.AutoField(primary_key=True, verbose_name="id")
 
     name = models.CharField(max_length=20, verbose_name="品牌名")
 
@@ -195,8 +199,8 @@ class BrandList(models.Model):
     def __str__(self):
         return self.name
 
-class FriendSiteList(models.Model):
 
+class FriendSiteList(models.Model):
     id = models.AutoField(primary_key=True, max_length=2, verbose_name="id")
 
     name = models.CharField(max_length=50, verbose_name="网站名")
@@ -213,8 +217,8 @@ class FriendSiteList(models.Model):
     def __str__(self):
         return self.name
 
-class ArticleType(models.Model):
 
+class ArticleType(models.Model):
     id = models.AutoField(primary_key=True, max_length=2, verbose_name="id")
 
     typeName = models.CharField(max_length=50, verbose_name="分类名称")
@@ -229,8 +233,8 @@ class ArticleType(models.Model):
     def __str__(self):
         return self.typeName
 
-class Author(models.Model):
 
+class Author(models.Model):
     id = models.AutoField(primary_key=True, max_length=2, verbose_name="id")
 
     authorName = models.CharField(max_length=50, verbose_name="作者")
@@ -245,8 +249,8 @@ class Author(models.Model):
     def __str__(self):
         return self.authorName
 
-class Article(models.Model):
 
+class Article(models.Model):
     id = models.AutoField(primary_key=True, max_length=2, verbose_name="id")
 
     title = models.CharField(max_length=200, verbose_name="标题")
@@ -257,7 +261,10 @@ class Article(models.Model):
 
     is_link = models.BooleanField(default=True, verbose_name="是否有链接")
 
-    content = UEditorField(u'内容', width=900, height=300, toolbars="full", imagePath="images/%(basename)s_%(datetime)s.%(extname)s", filePath="file/%(basename)s_%(datetime)s.%(extname)s", upload_settings={"imageMaxSize":1204000})
+    content = UEditorField(u'内容', width=900, height=300, toolbars="full",
+                           imagePath="images/%(basename)s_%(datetime)s.%(extname)s",
+                           filePath="file/%(basename)s_%(datetime)s.%(extname)s",
+                           upload_settings={"imageMaxSize": 1204000})
 
     img = models.FileField(upload_to='./upload/article/', blank=True, verbose_name="封面图片")
 
@@ -273,7 +280,7 @@ class Article(models.Model):
         verbose_name = u'资讯'
         verbose_name_plural = verbose_name
         ordering = ['-date_time']
-   
+
     def __unicode__(self):
         return self.title
 
