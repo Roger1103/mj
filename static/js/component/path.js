@@ -1,0 +1,1 @@
+define(function(){var u=$("#projectUrl"),v;v=u.length?u.val():"";return{url:{home:v}};});

@@ -1,0 +1,383 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <meta name="author" content="明江国际提供技术支持" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta name="format-detection" content="telephone=no, email=no" />
+
+    <meta name="renderer" content="webkit">
+
+    <meta name="description" content="" />
+
+    <meta name="keywords" content="明江国际,电子元器件" />
+
+    <title>询价-明江国际电子元件询价平台</title>
+    <link rel="shortcut icon" href={% static "images/favicon.png" %}/>
+
+    <!--ico-->
+    <link rel="stylesheet" type="text/css" href="/static/skin/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/static/skin/css/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/skin/css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="/static/skin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/static/skin/css/responsive.css" />
+
+    <script src="/static/skin/js/jquery-1.11.0.min.js"></script>
+    <script src="/static/skin/js/wow.min_1.js"></script>
+    <script src="/static/skin/js/owl.carousel.min.js"></script>
+
+    <link href="/static/css/bootstrap.min-v3.3.5.css" type="text/css" rel="stylesheet"/>
+
+    <link href="/static/css/video-js.css" type="text/css" rel="stylesheet"/>
+
+    <link href="/static/css/slick.css" type="text/css" rel="stylesheet"/>
+
+    <link href="/static/css/slick-theme.css" type="text/css" rel="stylesheet"/>
+
+    <link href="/static/css/base-v1.3.css" type="text/css" rel="stylesheet"/>
+
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet"/>
+
+    <link href="/static/css/style1.css" type="text/css" rel="stylesheet"/>
+
+    <link rel='stylesheet' id='main-css-css' href='/static/css/main5152.css?ver=1.0' type='text/css' media='all'/>
+
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
+
+    <!--[if lt IE 9]>
+
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+    <script src="http://cdn.bootcss.com/respond/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+
+    <!--Favicons-->
+
+</head>
+
+<body>
+
+<div class="index">
+
+   <div class="formaaph">
+
+            <a href="/#"><img class="close" src="/static/images/wrong.png"></a>
+
+            <h1>免费询价申请<span>为方便安排最合适的产品经理与您接洽，请详细填写以下内容：</span></h1>
+
+            <form class="formcon" id="myForm"  method="post">
+
+                <span class="imgspan">
+
+                   <input  name="name" type="text" placeholder="姓名*"><img src="/static/images/peo.png" alt="">
+
+                </span>
+
+                <span class="imgspan">
+
+                    <input  name="tell" type="text" placeholder="电话*"><img src="/static/images/phone.png" alt="">
+
+                </span>
+
+                <span class="imgspan">
+
+                    <input  name="company" type="text" placeholder="公司名称"><img src="/static/images/com.png" alt="">
+
+                </span>
+
+                <span class="imgspan">
+
+                    <input  name="job" type="text" placeholder="职位"><img src="/static/images/zhuanye.png" alt="">
+
+                </span>
+
+                <span class="imgspan">
+
+                    <input name="email" type="text" placeholder="联系邮箱*"><img src="/static/images/emailbox.png" alt="">
+
+                </span>
+
+                <div class="selec clearfix">
+
+                    <span class="name">品牌</span>
+
+                    <div class="xuanze">
+
+                        <span class="nameshow"><span class="c9">请选择</span></span>
+
+                        <input name="product_type" type="hidden"  class="nameshow"/>
+
+                        <ul>
+
+                            <li>AAC</li><li>Airgain</li><li>AVX</li><li>CellWise</li><li>Chilisin</li><li>FUDAN MICRO</li><li>Guoguang Electronic </li><li>Hillcrestlabs</li><li>HUBER-SUHNER</li><li>JJMicro</li><li>Kyocera</li><li>muRata</li><li>Nichicon</li><li>PANJIT</li><li>Preci-dip</li><li>Pulse</li><li>Qualcomm</li><li>QUECTEL</li><li>Sawnics</li><li>SIERRA WIRELESS</li><li>SII</li><li>Skyworks</li><li>Smiths Interconnect</li><li>VinaTech</li>
+                            <li>其他</li>
+
+                        </ul>
+
+                        <a href="javascript:void(0);" class="pdi"><img src="/static/images/xiala.png" alt=""></a>
+
+                    </div>
+
+                </div>
+
+
+
+                <span class="imgspan">
+
+                    <input name="product" type="text" placeholder="型号*" {% if number %} value="{{ number }}" {% endif %} >
+
+                </span>
+
+                <span class="imgspan">
+
+                    <input name="app" type="text" placeholder="应用">
+
+                </span>
+
+                <span class="imgspan">
+
+                    <textarea name="msg" id="" cols="30" rows="10" placeholder="项目描述"></textarea>
+
+                </span>                  
+
+                <div class="btnb">
+
+                    <button type="button" onclick="submitForm()">提交</button>
+
+                    <button type="reset">重置</button>
+
+                </div>
+
+            </form>
+
+    </div>
+
+</div>
+<div class="kzf-mod-link-container">
+  <div class="rowFluid">
+    <div class="container">
+      <div class="span12">
+        <div class="kzf-mod-link-out">
+          <div class="kzf-mod-so-title-box wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+            <h3 class="kzf-so-title">联系我们</h3>
+            <div class="kzf-so-text">一切良好工作的开始，都需相互之间的沟通搭桥，欢迎咨询。</div>
+          </div>
+            {% if companyInfo %}
+            <div class="rowFluid">
+            <div class="kzf-mod-link-inf-box">
+              <div class="span3 col-sm-6 col-xs-12"> <a href="tel:{{ companyInfo.phone }}">
+                <div class="kzf-mod-wrap wow fadeInLeft">
+                  <div class="kzf-mod-pic"> <img src="/static/skin/images/so-iphone.png" alt="联系电话"/> </div>
+                  <div class="kzf-mod-txt">
+                    <p>{{ companyInfo.phone }}</p>
+                  </div>
+                </div>
+                </a> </div>
+              <div class="span3 col-sm-6 col-xs-12"> <a href="http://wpa.qq.com/msgrd?v=3&amp;uin={{ companyInfo.qq }}" target="_blank">
+                <div class="kzf-mod-wrap wow fadeInRight">
+                  <div class="kzf-mod-pic"> <img src="/static/skin/images/so-qq.png" alt="公司名称" /> </div>
+                  <div class="kzf-mod-txt">
+                    <p>{{ companyInfo.name }}</p>
+                  </div>
+                </div>
+                </a> </div>
+              <div class="span3 col-sm-6 col-xs-12"> <a href="mailto:{{ companyInfo.email }}">
+                <div class="kzf-mod-wrap wow fadeInLeft">
+                  <div class="kzf-mod-pic"> <img src="/static/skin/images/so-mail.png" alt="联系邮箱" /> </div>
+                  <div class="kzf-mod-txt">
+                    <p>{{ companyInfo.email }}</p>
+                  </div>
+                </div>
+                </a> </div>
+              <div class="span3 col-sm-6 col-xs-12"> <a href="#">
+                <div class="kzf-mod-wrap wow fadeInRight">
+                  <div class="kzf-mod-pic"> <img src="/static/skin/images/so-location.png" alt="公司地址" /> </div>
+                  <div class="kzf-mod-txt">
+                    <p>{{ companyInfo.address }}</p>
+                  </div>
+                </div>
+                </a> </div>
+            </div>
+          </div>
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/static/js/jquery-1.12.4.min.js"></script>
+
+<script src="/static/js/video.min.js"></script>
+
+<script src="/static/js/slick.min.js"></script>
+
+<script src="/static/js/common.js"></script>
+
+<script type="text/javascript" src="/static/js/layer.js"></script>
+
+<script type="text/javascript" src="/static/js/jquery.SuperSlide.2.1.1.js"></script>
+
+<script>
+
+    $(function(){
+
+         /*下拉选择框*/
+
+        $('.pdi').click(function(){
+
+            $(this).parent().find('ul').stop().slideToggle(300);
+
+        });
+
+        $('.xuanze li').click(function(){
+
+            $(this).parents('.xuanze ul').slideUp(300);
+
+            $('.xuanze .nameshow').html($(this).html());
+
+            $("input[name='product_type']").val($(this).text());
+
+        });
+
+    })
+
+</script>
+
+<script>
+
+    //表单提交
+
+    this.submitForm=function(){
+
+        if($("input[name='name']").val()==''){
+
+            layer.alert(
+
+                    "姓名不能为空！",
+
+                    {
+
+                        'title':'消息',
+
+                        'btn':['好的']
+
+                    }
+
+            );
+            return false;
+
+        }
+
+        var phoneExp=/^\d{1,}$/;
+
+        if(!phoneExp.test($("input[name='tell']").val())){
+
+            layer.alert(
+
+                    "电话格式不正确！",
+
+                    {
+
+                        'title':'消息',
+
+                        'btn':['好的']
+
+                    }
+
+            );
+            return false;
+
+        }
+
+
+        var emailExp=/^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/;
+
+        if(!emailExp.test($("input[name='email']").val().toLocaleLowerCase())){
+
+            layer.alert(
+
+                    "邮箱格式不正确！",
+
+                    {
+
+                        'title':'消息',
+
+                        'btn':['好的']
+
+                    }
+
+            );
+
+            return false;
+
+        }
+
+
+
+        if($("input[name='product']").val()==''){
+
+            layer.alert(
+
+                    "型号不能为空！",
+
+                    {
+
+                        'title':'消息',
+
+                        'btn':['好的']
+
+                    }
+
+            );
+
+            return false;
+
+        }
+
+        $.post("/enquiry/",
+
+                $("#myForm").serialize(),
+
+                function (data){
+                    data = JSON.parse(data)
+                    layer.alert(
+
+                            data['info'],
+
+                            {
+                                'title':'消息',
+
+                                'btn':['好的']
+                            }
+
+                    );
+
+
+                    if(data['status']=="success"){
+
+                        location.href="/#";
+
+                    }
+
+                }
+
+        );
+
+    }
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - mjdb@localhost" uuid="5056a164-8281-4cf1-a310-b9cf1c2ab9ad">
+      <database-info product="MySQL" version="5.7.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )" family="MYSQL" exact-version="5.7.20">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:,mjdb</introspection-schemas>
+      <resolve-scope>*:mjdb</resolve-scope>
+      <unqualified-resolve-schemas>*:mjdb</unqualified-resolve-schemas>
+    </data-source>
+    <data-source name="Django default" uuid="723855c9-62e9-4d4d-b04c-e22ffbcde45e">
+      <database-info product="MySQL" version="5.7.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )" family="MYSQL" exact-version="5.7.20">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper" />
+      <user-name>root</user-name>
+      <introspection-schemas>*:,mjdb</introspection-schemas>
+      <resolve-scope>*:mjdb</resolve-scope>
+      <unqualified-resolve-schemas>*:mjdb</unqualified-resolve-schemas>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,335 @@
+{% load static %}
+<!doctype html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="zh-CN"> <!--<![endif]-->
+<head>
+    <!-- META TAGS -->
+    <meta charset="UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <meta name="author" content="明江国际提供技术支持" />
+    {#                <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+
+    <meta name="format-detection" content="telephone=no, email=no" />
+
+    <meta name="renderer" content="webkit">
+
+    <meta name="description" content="" />
+
+    <meta name="keywords" content="明江国际,电子元器件" />
+
+    <title>物料搜索-明江国际</title>
+
+    <link rel="shortcut icon" href={% static "images/favicon.png" %}/>
+
+
+    <!-- Style Sheet-->
+    <link rel="stylesheet" href={% static "style.css" %}/>
+{#    <link rel='stylesheet' id='bootstrap-css-css' href='/static/css/bootstrap5152.css?ver=1.0' type='text/css' media='all'/>#}
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel='stylesheet' id='responsive-css-css' href='/static/css/responsive5152.css?ver=1.0' type='text/css' media='all'/>
+    <link rel='stylesheet' id='pretty-photo-css-css' href='/static/js/prettyphoto/prettyPhotoaeb9.css?ver=3.1.4' type='text/css' media='all'/>
+    <link rel='stylesheet' id='main-css-css' href='/static/css/main5152.css?ver=1.0' type='text/css' media='all'/>
+    <link rel='stylesheet' id='custom-css-css' href='/static/css/custom5152.html?ver=1.0' type='text/css' media='all'/>
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+　　 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <style rel="stylesheet" type="text/css">
+        body{min-height: 100vh; padding-left: 0; padding-right: 0;}
+        .page-container{min-height: 100vh;}
+        .row{margin-left: 0; margin-right: 0;}
+        .push{height: 60px; margin-bottom: -60px;}
+        .main-listing{position: relative; top: 0; left: 50%; transform: translate(-50%, 0);}
+    </style>
+
+
+</head>
+
+<body>
+
+<!-- Start of Page Container -->
+<div class="page-container">
+    <!-- Start of Search Wrapper -->
+<div class="search-area-wrapper" style="margin:0 auto">
+    <div class="search-area container">
+        <h3 class="search-header"><a href="/#" style="color: #FFFFFF;">物料搜索</a></h3>
+        <!--<p class="search-tag-line">If you have any question you can ask below or enter what you are looking for!</p>-->
+        <form id="search-form" class="search-form clearfix" method="get" action="/search" autocomplete="off">
+            <div class="row clearfix">
+                <div class="col-xs-12 col-sm-12	col-md-12 col-lg-12">
+                    <input class="search-term required" type="text" id="s" name="s" placeholder="请输入物料号" title="* 请输入个物料号!"/>
+                    <input class="search-btn" type="submit" value="搜索"/>
+                    <div id="search-error-container"></div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<!-- End of Search Wrapper -->
+
+    <div class="container">
+        <div class="row clearfix">
+
+            <!-- start of page content -->
+            <div class="span8 main-listing" style="margin: 0;">
+                {% for data in goods_get %}
+                    <article class="format-standard type-post hentry clearfix">
+
+                    <header class="clearfix">
+
+                        <h3 class="post-title" style="padding-left: 22px;">
+                            <a href="#">{{ data.name }}</a>
+                        </h3>
+
+                        <div class="post-meta clearfix">
+                            <span class="date">物料号：{{ data.number }}</span>
+                            <span class="category">品牌：{{ data.brand }}</span>
+                            <span class="comments">分类：{{ data.classify }}</span>
+                            <span class="like-count">发票类型：{{ data.invoiceType }}</span>
+                        </div>
+                        <!-- end of post meta -->
+
+                    </header>
+                    <p style="padding-left: 22px;">产品规格： {{ data.standard }}</p>
+                    <p style="padding-left: 22px;">产品说明： {{ data.explain }}</p>
+
+                <a class="readmore-link " href="/contact?w={{ data.number }}" style="padding-left: 22px;">询价</a>
+
+                </article>
+                {% endfor %}
+
+
+                {% for data in goods_post %}
+                    <article class="format-standard type-post hentry clearfix">
+
+                    <header class="clearfix">
+
+                        <h3 class="post-title" style="padding-left: 22px;">
+                            <a href="#">{{ data.name }}</a>
+                        </h3>
+
+                        <div class="post-meta clearfix">
+                            <span class="date">物料号：{{ data.number }}</span>
+                            <span class="category">品牌：{{ data.brand }}</span>
+                            <span class="comments">分类：{{ data.classify }}</span>
+                            <span class="like-count">发票类型：{{ data.invoiceType }}</span>
+                        </div>
+                        <!-- end of post meta -->
+
+                    </header>
+                    <p style="padding-left: 22px;">产品规格： {{ data.standard }}</p>
+                    <p style="padding-left: 22px;">产品说明： {{ data.explain }}</p>
+                <a class="readmore-link" href="/contact?w={{ data.number }}" style="padding-left: 22px;">询价</a>
+
+                </article>
+
+                {% endfor %}
+
+                {% if not goods_post and  not goods_get %}
+                  <div class="" style="text-align: center;">
+                    暂无搜索结果，您可以直接<a class="btn btn-success" href="/contact/?w" style="margin: 0 22px;">询价</a>
+                  </div>
+                {% endif %}
+
+                <!--   <article class="format-standard type-post hentry clearfix">
+
+                    <header class="clearfix">
+
+                        <h3 class="post-title">
+                            <a href="single.html">Using Javascript</a>
+                        </h3>
+
+                        <div class="post-meta clearfix">
+                            <span class="date">25 Feb, 2013</span>
+                            <span class="category"><a href="#" title="View all posts in Advanced Techniques">Advanced
+                                Techniques</a></span>
+                            <span class="comments"><a href="#" title="Comment on Using Javascript">0 Comments</a></span>
+                            <span class="like-count">18</span>
+                        </div>
+                    </header>
+
+                    <p>Many of us work in an endless stream of tasks, browser tasks, social media, emails, meetings,
+                        rushing from one thing to another, never pausing and never ending.&nbsp;Then the day is over,
+                        and we are exhausted, and we often have very little to show for it. And we start the next . . .
+                        <a class="readmore-link" href="http://knowledgebase.inspirythemes.com/using-javascript/">Read
+                            more</a></p>
+
+                </article>-->
+
+                <!--  <article class=" type-post format-image hentry clearfix">
+
+                    <header class="clearfix">
+
+                        <h3 class="post-title">
+                            <a href="single.html">Using Images</a>
+                        </h3>
+
+                        <div class="post-meta clearfix">
+                            <span class="date">25 Feb, 2013</span>
+                            <span class="category"><a href="#" title="View all posts in Designing in WordPress">Designing
+                                in WordPress</a></span>
+                            <span class="comments"><a href="#" title="Comment on Using Images">0 Comments</a></span>
+                            <span class="like-count">7</span>
+                        </div>
+
+
+
+                    </header>
+
+                    <a href="#" title="Using Images"><img width="770" height="501"
+                                                          src="images/temp/living-room-770x501.jpg"
+                                                          class="attachment-std-thumbnail wp-post-image"
+                                                          alt="Living room"></a>
+
+                    <p>Many of us work in an endless stream of tasks, browser tasks, social media, emails, meetings,
+                        rushing from one thing to another, never pausing and never ending.&nbsp;Then the day is over,
+                        and we are exhausted, and we often have very little to show for it. And we start the next . . .
+                        <a class="readmore-link" href="http://knowledgebase.inspirythemes.com/using-images/">Read
+                            more</a></p>
+
+                </article>-->
+
+                <!--  <article class="type-post  format-video hentry clearfix">
+
+                    <header class="clearfix">
+
+                        <h3 class="post-title">
+                            <a href="single.html">Using Video</a>
+                        </h3>
+
+                        <div class="post-meta clearfix">
+                            <span class="date">24 Feb, 2013</span>
+                            <span class="category"><a href="#" title="View all posts in WordPress Plugins">WordPress
+                                Plugins</a></span>
+
+                            <span class="comments"><a href="#" title="Comment on Using Video">0 Comments</a></span>
+
+                            <span class="like-count">7</span>
+                        </div>
+
+
+                    </header>
+                    <div class="post-video">
+                        <div class="video-wrapper">
+                            <iframe src="http://player.vimeo.com/video/24535181" width="500" height="281"
+                                    frameborder="0" webkitallowfullscreen="" mozallowfullscreen=""
+                                    allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+
+                    <p>Many of us work in an endless stream of tasks, browser tasks, social media, emails, meetings,
+                        rushing from one thing to another, never pausing and never ending.&nbsp;Then the day is over,
+                        and we are exhausted, and we often have very little to show for it. And we start the next . . .
+                        <a class="readmore-link" href="http://knowledgebase.inspirythemes.com/using-video/">Read
+                            more</a></p>
+
+                </article>-->
+
+                <!--  <article class=" type-post  format-standard hentry clearfix">
+
+                    <header class="clearfix">
+
+                        <h3 class="post-title">
+                            <a href="single.html">WordPress Site Maintenance</a>
+                        </h3>
+
+                        <div class="post-meta clearfix">
+                            <span class="date">24 Feb, 2013</span>
+                            <span class="category"><a href="#" title="View all posts in Website Dev">Website
+                                Dev</a></span>
+
+                            <span class="comments"><a href="#" title="Comment on WordPress Site Maintenance">0
+                                Comments</a></span>
+
+                            <span class="like-count">15</span>
+                        </div>
+
+
+                    </header>
+
+                    <p>Many of us work in an endless stream of tasks, browser tasks, social media, emails, meetings,
+                        rushing from one thing to another, never pausing and never ending.&nbsp;Then the day is over,
+                        and we are exhausted, and we often have very little to show for it. And we start the next . . .
+                        <a class="readmore-link"
+                           href="http://knowledgebase.inspirythemes.com/wordpress-site-maintenance/">Read more</a></p>
+
+                </article>-->
+                <!-- <div id="pagination">
+                    <a href="#" class="btn active">1</a>
+                    <a href="#" class="btn">2</a>
+                    <a href="#" class="btn">3</a>
+                    <a href="#" class="btn">Next »</a>
+                    <a href="#" class="btn">Last »</a>
+                </div>-->
+
+            </div>
+            <!-- end of page content -->
+        </div>
+
+
+    </div>
+    <div class="push"></div>
+</div>
+<!-- End of Page Container -->
+
+<!-- Start of Footer -->
+<footer id="footer-wrapper" style="margin:0 auto">
+
+    <!-- end of #footer -->
+
+    <!-- Footer Bottom -->
+    <div id="footer-bottom-wrapper">
+        <div id="footer-bottom" class="container">
+            <div class="row">
+                <div class="span6">
+                    <p class="copyright" style="color: #fff;">
+                        Copyright © 2017. All Rights Reserved by 明江国际 </a>
+                    </p>
+                </div>
+                <div class="span6">
+                    <!-- Social Navigation
+                    <ul class="social-nav clearfix">
+                            <li class="linkedin"><a target="_blank" href="#"></a></li>
+                            <li class="stumble"><a target="_blank" href="#"></a></li>
+                            <li class="google"><a target="_blank" href="#"></a></li>
+                            <li class="deviantart"><a target="_blank" href="#"></a></li>
+                            <li class="flickr"><a target="_blank" href="#"></a></li>
+                            <li class="skype"><a target="_blank" href="skype:#?call"></a></li>
+                            <li class="rss"><a target="_blank" href="#"></a></li>
+                            <li class="twitter"><a target="_blank" href="#"></a></li>
+                            <li class="facebook"><a target="_blank" href="#"></a></li>
+                    </ul>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Footer Bottom -->
+
+</footer>
+<!-- End of Footer -->
+
+<a href="#top" id="scroll-top"></a>
+
+<!-- script -->
+<script type='text/javascript' src='/static/js/jquery-1.12.4.min.js'></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type='text/javascript' src='/static/js/jquery.easing.1.34e44.js?ver=1.3'></script>
+<script type='text/javascript' src='/static/js/prettyphoto/jquery.prettyPhotoaeb9.js?ver=3.1.4'></script>
+{#<script type='text/javascript' src='/static/js/jquery.liveSearchd5f7.js?ver=2.0'></script>#}
+<script type='text/javascript' src='/static/js/jflickrfeed.js'></script>
+<script type='text/javascript' src='/static/js/jquery.formd471.js?ver=3.18'></script>
+<script type='text/javascript' src='/static/js/jquery.validate.minfc6b.js?ver=1.10.0'></script>
+<script type='text/javascript' src='/static/js/custom5152.js?ver=1.0'></script>
+
+</body>
+</html>

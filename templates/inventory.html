@@ -1,0 +1,577 @@
+{% load static %}
+<!DOCTYPE html>
+<html><head>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta charset="UTF-8">
+   <title>搜索 - 明江国际电子元件询价平台</title>
+				  <meta name="keywords" content="电子元器件,明江国际"/>
+				  <meta name="description" content="明江国际"/>
+			 <link rel="shortcut icon" href="/static/images/favicon.png"/>
+   
+ 
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+<link id="dns-prefetch" href="http://img0.ykystatic.com,//img1.ykystatic.com"/>
+ 
+<link rel="stylesheet" type="text/css" href="/static/webres/jquery.mCustomScrollbar.css"/>
+<link rel="stylesheet" type="text/css" href="/static/css/common.css"/>
+
+<!--[if lt IE 9]>
+      <script type="text/javascript" src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js?v=180103181859"></script>
+      <script type="text/javascript" src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js?v=180103181859"></script>
+<![endif]-->
+
+<script type="text/javascript" >
+	
+var ykyUrl = {
+		admin : '//admin.yikuyi.com',
+		transaction : '/services-transaction',
+		portal :'//www.yikuyi.com',
+		pay: '/services-pay',
+		payPort: '//pay.yikuyi.com',
+		mainPort: '//my.yikuyi.com',
+		customerPort: '//home.yikuyi.com/main',
+		uploadPort: '//admin.yikuyi.com',
+		database: '/services-basedata',
+		party: '/services-party',
+		product: '/services-product',
+		quotation: '/services-quotation',
+		cartPort:'/services-transaction',
+		login:'https://passport.yikuyi.com',
+		customer:'//home.yikuyi.com/main',
+		info: '/services-info',
+		webres : '//misc.ykystatic.com/webres', 
+		_this : ''
+};
+
+		//ykyUrl.transaction='http://192.168.1.101:9023';
+		/* avalon.config({
+		    debug: false
+		})  */
+	</script><link rel="stylesheet" type="text/css" href="/static/css/app/detail.css"/>
+   <link rel="stylesheet" type="text/css" href="/static/css/common.css"/>
+   <link rel="stylesheet" type="text/css" href="/static/css/app/inventory_list.css"/>
+   <link rel="stylesheet" type="text/css" href="/static/css/libs/kkpager_red.css"/>
+   <style type="text/css">
+	.quick_view .layui-layer-title{height:36px;line-height:36px;background-color:#f8f8f8 !important;}
+	.quick_view .layui-layer-setwin{top:12px;}
+ 	.first_row td{border-top: 1px solid #DDDDDD;}
+ 	.brd{ border-right: 1px solid #e4e4e4;}
+ 	#kkpager_btn_go:hover, .pageBtnWrap a:hover{border: 1px solid #036eb8;}
+ 	.pageBtnWrap span.curr{background-color: #036eb8;}
+ 	.up_skin_class .layui-layer-title{height: 30px;}
+	.up_skin_class .layui-layer-btn{text-align: center;margin-top: 0px;padding: 0 10px 45px;}
+	.up_skin_class .layui-layer-content{height: auto!important;margin-top: 5px;font-size: 16px;color: #333;}
+	.up_skin_class .layui-layer-content p{text-align: center;position: relative;margin-left: 10px;}
+	body .up_skin_class{margin: auto;background-color: #fff;border: 3px solid #afafaf !important;}
+	.cc .prd_link:hover{color:#036eb8;}
+	.bread_crumbs{font-size:12px;}
+	#show_maker a:hover{
+		color:#333!important;
+	}
+	.go2inquiry a{color:#333;}
+	.go2inquiry a:hover{color:#036eb8;}
+	.inquiry_tips {
+	    background: #fff;
+	    border: solid 1px #e4e4ea;
+	    position: absolute;
+	    top: 30px;
+	    right: -30px;
+	    width: 380px;
+	    text-align: left;
+	    padding: 10px;
+	    font: 14px/1.14 'Microsoft Yahei' ,Arial, Simsun, Helvetica, sans-serif;
+	}
+    .go2inquiry .bor_span {
+	    display: block;
+	    width: 0;
+	    height: 0;
+	    border-width: 10px;
+	    border-style: solid;
+	    border-color: transparent transparent #e4e4ea transparent;
+	    position: absolute;
+	    top: 11px;
+	    right: -4px;
+	    z-index:99;
+	}
+	.go2inquiry .bor_span em {
+	    display: block;
+	    width: 0;
+	    height: 0;
+	    border-width: 10px;
+	    border-style: solid;
+	    border-color: transparent transparent #fff transparent;
+	    position: absolute;
+	    top: -9px;
+	    left: -10px;
+	}	
+	.storehouse{
+	    color: #D68A8A;
+	    border: 1px solid #D68A8A;
+	    display: inline-block;
+	    /* width: 43px; */
+	    height: 17px;
+	    line-height: 17px;
+	    text-align: center;
+	    border-radius: 3px;
+	    padding: 0px 4px;
+	}
+	.descList{
+	    margin-bottom: 3px !important;
+	  }
+	  
+  </style>
+
+</head>
+
+<body>
+
+
+
+
+<div class="header hd">
+    <div class="topbase">
+	      
+	      
+			<div class="w"> <!-- ovh -->
+				<ul class="l f12 ">
+					<li class="dt">您好，欢迎来到<a href="/">明江国际</a>！</li>
+				</ul>
+				<ul class="l f12" style="height:30px;">
+					<marquee width="350" height="30" behavior="alternate" scrollamount="2" onmouseout="start()" onmouseover="stop()" class="run_nocition">
+						<span title="" class="show_nocition"><i class="title_notice" style="color:#3377aa;"></i><a href="javascript:;" target="_blank" class="top_nocition"> </a></span>
+					</marquee>
+				</ul>
+				<ul class="r f12">
+
+
+				    <li >客服热线{{ companyInfo.phone }}</li>
+                    <li class="spacer mt8"></li>
+				    <li><a rel="nofollow"   href="javascript:void(0);" onclick="AddFavorite('mj','http://www.mj-electronic.com')"><i  style="color:#036eb8;"></i> 收藏本站</a></li>
+                    <li class="spacer mt8"></li>
+                    <li ><a rel="nofollow" target="_blank" href="{{ companyInfo.emailLink }}">邮件</a></li>
+                    <li class="spacer mt8"></li>
+                    <li ><a rel="nofollow" target="_blank" href="{{ companyInfo.sysLink }}">系统登录</a></li>
+
+				</ul>
+			</div>
+		
+		
+    </div>
+	<div style="height:90px;" class="w rel pt12">
+		<div class="logo_index">
+			<a href="/" class="logo db">
+				<img src="/static/images/static/logo2x.png" alt="明江国际" width="200" >
+			</a>
+		</div>
+		<ul class="f16 top_menu" style="height:80px;margin-top:32px;">
+		   <!-- <li class="spacer mt8"></li> -->
+		   <!-- <li class="spacer mt8"></li> -->
+		   <li class="ml60"><a class="b " href="/search/?s=" style="margin-left: 30px" id="vendorList"> 全部产品</a></li>
+            {% for data in articleType %}
+               <li class="ml60"><a class="b " href="/articlelist/?type={{ data.id }}&page=1" style="margin-left: 30px"  id="vendorList"> {{ data.typeName }}</a></li>
+            {% endfor %}
+		   <li class="ml60"><a class="b " href="/about" style="margin-left: 30px"  id="manuList"> 关于明江</a></li>
+		   <li class="ml60"><a class="b active" href="/contactus" style="margin-left: 30px"  id="finance"> 联系我们</a></li>
+		</ul>
+
+		<!-- 新版搜索框 -->
+		<div class="header_search r">
+            <form  method="get" action="/search" autocomplete="off">
+			<div class="header_search_new" id="hSearch">
+				<input type="text" class="header_search_text" noplaceholder='true' name="s" id="_condition" maxlength="50" placeholder="请输入型号" />
+				<i class="header_search_limg icon-head-search"></i>
+				<button style="cursor: pointer;" class="header_search_rimg icon-head-search" ></button>
+				<a href="javascript:;" class="icon-head-delete head-delete" style="display:none;"></a>
+			</div>
+             </form>
+			<!-- 关联词显示 -->
+			<div class="predictive_box predictive_top dsn">
+				<i class="show_up"></i>
+			</div>
+		</div>
+	 
+		
+	 </div>
+	
+	
+	</div>
+	<input id="pageToken" type="hidden" value="Basic "/>
+ </div>
+<!---index header  end    ---->
+
+<div class="bread_crumbs w fix" style="margin-bottom:10px;margin-top:15px;">
+     <ul>
+     	<li>
+			<a href="#" title="明江" class="bread_alls">首页</a>
+		</li>
+    	<li>
+    		<span class="icon-indicate_rmin"></span>
+		   <a class="all_results" href="/search/inventory/">全部产品</a>
+    	</li>
+    	<!-- 搜索条件为分销商时 -->
+    	<!-- 关键字 -->
+	    </ul>
+</div>
+
+
+
+<!-- 悬浮窗 start -->
+<div class="float_top" >
+	<div class="w">
+		<ul class="screen_box">
+			<li  title="默认排序" onclick="changeSort();" class="b_c" >默认</li>
+			</ul>
+
+	 <form  method="get" action="/search" autocomplete="off">
+		<div class="search_box" id="tSearch">
+			<div class="select_way">
+				<div class="select_text">
+					<div>
+						<span class="select_name" data-id="1">型号</span>
+					</div>
+				</div>
+				<i></i>
+			</div>
+			<input type="text" class="search_text" id="top_condition" name="s" autocomplete="off">
+			<button class="button_search rel"><i></i>搜索</button>
+			<a href="javascript:;" class="icon-uniE93E del_btn_search"></a>
+			<!-- 搜索联想词显示框 -->
+			<div class="predictive_box dsn">
+				<i class="show_up"></i>
+			</div>
+		</div>
+		</form>
+	</div>
+</div>
+<!-- 悬浮窗end -->
+
+<!-- 列表  -->
+   <div class="s_list" style="min-height:400px;">
+			<div class="s_condition">
+				<div class="stock_l" > <!-- style="margin-left:20px;" -->
+					<ul> 
+<li title="默认排序" onclick="changeSort();" class="b_c" >默认</li>
+                    </ul>
+				</div>
+				<!-- 搜索条件按照是否有库存 -->
+				<div class="choose_screen mt8">
+					<input class="check_select" id="showHasStoreMain" name="showHasStore" type="checkbox" onclick="javascript:selectIsQtyInfo('showHasStoreMain');"  >
+				</div>
+				
+
+				<!-- 搜索条件按照来源 -->
+				</div>
+               <table class="stockList" cellspacing="0" cellpadding="0">
+				<tr class="s_title">
+					<th class="g_info" style="width:15%;">商品信息</th>
+                    <th class="s_w" style="width:5%;">品名分类</th>
+                    <th class="s_w" style="width:20%;">料号</th>
+					<th class="s_w" style="width:10%;">品牌</th>
+					<th class="s_w" style="width:30%;align-content: center">描述</th>
+					<th class="s_w brd" style="width:20%;">操作</th>
+				</tr>
+
+
+                {% for data in goods_get %}
+                 <tr class="cc ga_prod" >
+					<td  class="pt20 pb10 rel" style="text-align: left;border-left: 1px solid #e4e4e4;">
+						<div class="s_img l">
+						  <a class="ga_detail" > <img class="small_img" onerror="this.onerror=null;this.src='/static/images/static/yky300.png';" src="/media/{{ data.img }}" data-src="/media/{{ data.img }}"></a>
+                        </div>
+					</td>
+                     <td class="pt20 g3  show-light" style="padding-top: 50px">
+                         <div class="g3">
+
+							<div class="search_vendor_cont" style="overflow: inherit;">
+								<p class="g3 f16 show-model">
+									<a target="_blank" class="g3 prd_link ga_detail show-light" >{{ data.name }}</a>
+                                </p>
+
+							</div>
+
+							<p class="mb0 show-light"><span>{{ data.classify }}</span></p>
+
+						</div>
+                     </td>
+                     <td class="pt20 g3  show-light" style="padding-top: 50px">
+						<div  style="line-height:16px;">
+						    <a class="g3 prd_link ga_detail show-light" >
+							 					原厂：{{ data.number }}</a>
+                        </div>
+                        <div class="md10" style="line-height:16px;" >
+						    <a style="font-weight:normal;"  >
+							 					明江：{{ data.model }}</a>
+                        </div>
+					</td>
+					 <td class="pt20 g3 original-box show-light" style="padding-top: 50px">
+						<div class="md10" style="line-height:16px;">
+						    <a style="font-weight:normal;" >
+							 					{{ data.brand }}</a>
+                        </div>
+                     </td>
+					<td class="pt20 g3" style="padding-top: 50px">
+						<div  style="margin-bottom:15px;">{{ data.standard }}</div>
+					</td>
+
+					<td class="pt20 brd">
+						<span class="my_enquiry mt10">
+							<a href="/contact?w={{ data.number }}" target="_blank" class="qq_enquiry">
+								<i class="f14">
+								询价</i>
+							</a>
+						</span>
+							<span class="my_enquiry mt10">
+							<a href="http://wpa.qq.com/msgrd?v=3&uin={{ companyInfo.qq }}" target="_blank" class="qq_enquiry">
+								<i class="f14">
+								QQ询价</i>
+							</a>
+						</span>
+						</td>
+				</tr>
+                {% endfor %}
+
+            </table>
+                 {% if not goods_get %}
+                          <div style="width: 100%;">
+                            <span class="my_enquiry w" style="text-align: center;margin-top: 130px;margin-bottom: 130px">
+							  <a href="/contact?w=" target="_blank" class="qq_enquiry">
+								<i class="f14">
+								直接询价</i>
+							  </a>
+						    </span>
+                            </div>
+                 {% endif %}
+
+		</div>
+<!-- 列表  -->
+
+<!-- 分页 -->
+<div class="w">
+
+	<div class="pageList">
+			<div class="item_page">
+				</div>
+         	<div id="pager">
+	       		<div id="kkpager" class="mr15">
+
+       			</div>
+
+	       	</div>
+	       	<input type="hidden" value="{{pgcount}}" id="total">
+	       	<input type="hidden" value="" id="keyWord">
+			<input type="hidden" value="20" id="pageSize">
+			<input type="hidden" value="{{pgpages}}" id="totalPageNum">
+		</div>
+
+</div>
+<!-- footer -->
+
+
+
+ 
+
+<!---index footer  start   ---->
+ <div class="footer fix">
+	 <div class="ft_w f12 bg3">
+	 	<div class="w rel">
+		     <div class="f_copyright footer_new f14">
+				<p>明江国际电子（深圳）有限公司 版权所有  Copyright@2015-2018 mj-electronic.com Limited. All rights reserved <span class="partition">|</span><a  class="foot_link" target="_blank" href="http://www.miitbeian.gov.cn" rel="nofollow">粤ICP备18004343号-1</a></p>
+		      <p>
+		     		<span>友情链接：</span>
+
+                     {% for siteLink in siteLinks %}
+                     <span><a href={{ siteLink.link }} target="_blank" class="foot_link">{{ siteLink.name }}</a></span>
+                     {% if not forloop.last %}
+                      <i></i>
+                     {% endif %}
+
+                     {% endfor %}
+                 </p>
+             </div>
+		     <div class="footer_img">
+		     	<a href="http://gdcainfo.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank" rel="nofollow"><span class="foot_img03"></span></a>
+		     	<a href="http://www.gdnet110.gov.cn/"  target="_blank" rel="nofollow"><span class="foot_img04"></span></a>
+		     </div>
+			<input type="hidden" id="projectUrl" value="">
+			
+		</div>
+     </div>
+ </div>
+
+<div id="fixBar">
+    <ul class="showBar">
+    	<li><a class="go2coupon" href="javascript:;" ><em class="bar_coupon"></em><span>优惠券<i class="tgl"></i></span></a></li>
+    	<li><a class="onlineSever openFirmQQ" href="javascript:;"><em class="bar_qq"></em><span>在线客服<i class="tgl"></i></span></a></li>
+        <li class="middleTgl"><a href="javascript:;"><em class="bar_qrCode "></em><div class="qrCode"><img src=""><i class="tgl"></i></div></a></li>        
+	</ul>
+    <ul class="showBarBtm">
+    	<li><a class="openFeedback" href="javascript:;" onclick="addFeedback();"><em class="bar_feedBack"></em><span>意见反馈<i class="tgl"></i></span></a></li>
+        <li><a class="go2Top" href="javascript:;"><em class="bar_top"></em><span>返回顶部<i class="tgl"></i></span></a></li>
+    </ul>
+</div>
+
+<div id="openFeedback" style="display: none;">
+	<div id="contentMsg" style="display:block;" class="feedback feed">
+		<p class="feedback_tips">您有任何意见和建议，或使用中遇到的问题，请在本页面反馈。</p>
+		<p class="f16 g3 mt10">反馈内容：</p>
+		<div class="feed_text mt14 rel">
+			<textarea class="text_c" id="content" maxlength="200" placeholder="请输入您想反馈的内容，我们将竭诚为您服务"></textarea>
+			<p class="g9 f12 r mr12 mt4"><i class="letter_num">0</i>/200</p>
+			<span id="content_tips" class="f14 mt4 dib f_error1 v_hide" style="color:#B2100D">请输入反馈内容</span>
+		</div>
+		<p class="f16 mt10"><span class="g3">联系方式</span><i class="g6">（选填：邮箱、手机、QQ均可）：</i></p>
+		<p class="mt14"><input name="联系方式" type="text" id="contactTel"  class="contact" value="" >
+		<span id="contactTel_tips" class="f14 mt4 dib f_error2 v_hide" style="color:#B2100D">请输入联系方式</span>
+		</p>
+		<p class="tc rel mt14" style="margin-bottom:40px;"><a onclick="saveFeedback()" class="feedbutton submit_btn mr20">提交</a><a onclick="layer.close(deleteDivIndex)" class="feedbutton">取消</a><!-- <span class="error" style="display:none;"><i></i><em class="error_tips"></em></span> --></p>
+	</div>
+	<div id="successTip" style="display:none;margin-top:130px; margin-left:130px;" class="feedbutton"><a href="javascript:;" class="feedbutton">提交成功</a></div>
+</div>
+ 
+
+<script type="text/javascript" src="/static/webres/jquery.min.js"></script>
+<script type="text/javascript" src="/static/webres/kkpager.min.js"></script>
+<script type="text/javascript" src="/static/webres/layer.js"></script>
+<script type="text/javascript" src="/static/webres/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/static/webres/require.js"></script>
+<script type="text/javascript" src="/static/webres/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="/static/js/lib/ykypage.js"></script>
+<script type="text/javascript" src="/static/js/lib/yky.common.js"></script>
+<script type="text/javascript" src="/static/js/common/common.js"></script>
+<script type="text/javascript" src="/static/js/app/headerCart.js"></script>
+<script type="text/javascript" src="/static/js/app/header.js"></script>
+<script type="text/javascript" src="/static/webres/ga.min.js"></script>
+
+<script type="text/javascript" src="/static/js/requirejs-config.js"></script>
+
+<script type="text/javascript" src="/static/js/app/index.js"></script>
+
+ <!---index footer  End   ---->
+<script type="text/javascript">
+
+	/*
+	 * 显示一个提示文字
+	 */
+  	
+  	var resultMessage = "";
+  	$(function(){
+  			
+  		if(resultMessage != ""){
+  			showMessage(resultMessage);
+  		}
+  	});
+	$(function(){
+		if(resultMessage != ""){
+			//showMessage(resultMessage);
+		}
+	});
+	function showMessage(message){
+		$(".ts_text").text(message);
+		$(".ts_text").toggle("slow","swing",true);
+		setTimeout(function(){
+			$(".ts_text").toggle("slow","swing",false);
+		},3000);
+	}
+
+ var deleteDivIndex = 2;
+ function addFeedback(){
+	 $("#content").val(""); 
+	 $("#contactTel").val("");
+	 $(".letter_num").text(0);
+	 $("#content").siblings("div").css("display","block");
+	 $(".feedback .f_error1").addClass("v_hide");
+	 $(".feedback .f_error2").addClass("v_hide");
+	 $(".feedback .text_c").removeClass("error_bor");
+	 $(".feedback .contact").removeClass("error_bor");
+	 document.getElementById("contentMsg").style.display="";
+	 document.getElementById("successTip").style.display="none";
+	deleteDivIndex = layer.open({
+	  type: 1,
+	  title:" ",
+	  move: false,
+	  offset:'10%',
+	  shade: 0.5,
+	  skin:'s_feedback',
+	  area: ['500px', '480px'],
+	  content: $('#openFeedback')
+	});
+}
+
+function httpPost(content,contactTel){
+	var recommendData = JSON.stringify({
+			content:content,
+			contentTel:contactTel
+	})
+	$.ajax({
+		  type: "POST",
+		  url: ykyUrl.info + "/v1/recommendations",
+		  contentType:'application/json',
+		  data: JSON.stringify({
+				categoryId:'20005',
+				content:recommendData
+			}),
+		  async: false,
+		  success: function(data){
+			  layer.close(deleteDivIndex)
+			  layer.msg("<p class='g3 tc'><i class='icon-right-c' style='font-size:24px;font-weight:bold;color:#87b848;margin-right:15px;position:relative;top:3px;'></i>提交成功！</p>", {
+	                area: ["420px", "120px"],
+	                offset: '30%',
+	                skin: "msg_skin_class"
+	            });
+		  }
+	});
+}
+function saveFeedback(){
+	var content = $("#content").val(); 
+	var contactTel = $("#contactTel").val(); 
+	if(!content || $.trim(content).length <= 0){
+		$(".feedback .f_error1").removeClass("v_hide");
+		$("#content").addClass("error_bor");
+		if(!contactTel || $.trim(contactTel).length <= 0){
+			$("#contactTel").addClass("error_bor");
+			$(".feedback .f_error2").removeClass("v_hide");
+		}
+		return;
+	}
+	if(!contactTel || $.trim(contactTel).length <= 0){
+		$(".feedback .f_error2").removeClass("v_hide");
+		$("#contactTel").addClass("error_bor");
+		return;
+	}
+	httpPost(content,contactTel);
+}
+$("#content").on("keyup",function(){
+	$(this).removeClass("error_bor");
+	$(".feedback .f_error1").addClass("v_hide");
+	var ln = $("#content").val().length;
+	$(".letter_num").text(ln);
+})
+$("#contactTel").on("keyup",function(){
+	$(".feedback .f_error2").addClass("v_hide");
+	$(this).removeClass("error_bor");
+})
+</script>
+<!-- WPA Button Begin -->
+<!-- <script charset="utf-8" class="wpaqq" type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php?key=XzgwMDE1ODkwOF80MTQ3MTlfODAwMTU4OTA4Xw"></script> -->
+<script type="text/javascript">
+
+	
+	function closeWpaqq(){
+		 $("body").on("click",".openFirmQQ",function(){
+			 window.open('http://wpa.qq.com/msgrd?v=3&uin={{ companyInfo.qq }}');
+		 })
+	}
+	closeWpaqq();
+</script>
+<!-- WPA Button End --><!-- footer -->
+</body>
+</html>	
+<script type="text/javascript" src="/static/js/common/stockUtils.js"></script>
+<script type="text/javascript" src="/static/js/app/productList.js"></script>
+
+ 

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+           <table class="stockList" cellspacing="0" cellpadding="0">
+				<tr class="s_title">
+					<th class="g_info" style="width:15%;">商品信息</th>
+                    <th class="s_w" style="width:5%;">品名分类</th>
+                    <th class="s_w" style="width:20%;">料号</th>
+					<th class="s_w" style="width:10%;">品牌</th>
+					<th class="s_w" style="width:30%;align-content: center">描述</th>
+					<th class="s_w brd" style="width:20%;">操作</th>
+				</tr>
+
+
+                {% for data in goods_get %}
+                 <tr class="cc ga_prod" >
+					<td  class="pt20 pb10 rel" style="text-align: left;border-left: 1px solid #e4e4e4;">
+						<div class="s_img l">
+						  <a class="ga_detail" > <img class="small_img" onerror="this.onerror=null;this.src='/static/images/static/yky300.png';" src="/media/{{ data.img }}" data-src="/media/{{ data.img }}"></a>
+                        </div>
+					</td>
+                     <td class="pt20 g3  show-light" style="padding-top: 50px">
+                         <div class="g3">
+
+							<div class="search_vendor_cont" style="overflow: inherit;">
+								<p class="g3 f16 show-model">
+									<a target="_blank" class="g3 prd_link ga_detail show-light" >{{ data.name }}</a>
+                                </p>
+
+							</div>
+
+							<p class="mb0 show-light"><span>{{ data.classify }}</span></p>
+
+						</div>
+                     </td>
+                     <td class="pt20 g3  show-light" style="padding-top: 50px">
+						<div  style="line-height:16px;">
+						    <a class="g3 prd_link ga_detail show-light" >
+							 					原厂：{{ data.number }}</a>
+                        </div>
+                        <div class="md10" style="line-height:16px;" title="Vishay">
+						    <a style="font-weight:normal;"  title="Vishay">
+							 					明江：{{ data.model }}</a>
+                        </div>
+					</td>
+					 <td class="pt20 g3 original-box show-light" style="padding-top: 50px">
+						<div class="md10" style="line-height:16px;" title="Vishay">
+						    <a style="font-weight:normal;"  title="Vishay">
+							 					{{ data.brand }}</a>
+                        </div>
+                     </td>
+					<td class="pt20 g3">
+						<div  style="margin-bottom:15px;">{{ data.explain }}</div>
+					</td>
+
+					<td class="pt20 brd">
+						<span class="my_enquiry mt10">
+							<a href="/contact?w={{ data.number }}" target="_blank" class="qq_enquiry">
+								<i class="f14">
+								询价</i>
+							</a>
+						</span>
+							<span class="my_enquiry mt10">
+							<a href="http://wpa.qq.com/msgrd?v=3&uin={{ companyInfo.qq }}" target="_blank" class="qq_enquiry">
+								<i class="f14">
+								QQ询价</i>
+							</a>
+						</span>
+						</td>
+				</tr>
+                {% endfor %}
+
+            </table>
+           {% if not goods_get %}
+             <div style="width: 100%;">
+                            <span class="my_enquiry w" style="text-align: center;margin-top: 130px;margin-bottom: 130px">
+							  <a href="/contact?w=" target="_blank" class="qq_enquiry">
+								<i class="f14">
+								直接询价</i>
+							  </a>
+						    </span>
+                            </div>
+           {% endif %}
+</body>
+</html>
